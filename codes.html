@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Friend Code Search</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+		<script type="text/javascript" src="js/fcs.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+	<center>
+		<div id="container">
+			<div id="header">
+				<div id="banner"><a href="index.php"><div style="height: 9px"></div>Index</a></div>
+				<div style="position: relative; bottom: 45px; left: 5px; width: 150px;">
+					Welcome, <b>Test</b>!<br>
+
+					<a href="codes.php" class="navbar_links">My Page</a><br>
+				</div>
+			</div>
+			<div style="background: url('images/bbl.gif') no-repeat #9edefa; height: 10px; text-align: right"><img src="images/bbr.gif"></div>
+			<div id="body">
+				<div id="body_ct"><? echo "\n"; ?>
+					<div id="response" style="margin: 5px;float: right;"></div>
+					<!-- USER DETAILS BOX START -->
+
+					<div class="content">
+						<h1>YOUR DETAILS</h1>
+						<div style="float: left; height: 125px; width: 125px; padding: 10px"><img src="http://www.nintendoconnection.net/forums/download/file.php?avatar=" /></div>
+						<i><div id="editnotes">Click here to add some notes to your profile!  A good start would maybe be a few words about yourself.</div></i>
+						<div style="clear: both;"></div>
+					</div>
+					<!-- USER DETAILS BOX END -->
+					<br />
+
+					<!-- USER FRIEND CODE BOX START -->
+					<div class="content">
+		   				<h1>YOUR FRIEND CODES</h1>
+		   				<div style="width: 570px; margin: 0 auto" id="the_codes">
+		   				<div style="float: left; width: 20px">&nbsp;</div><div style="float: left; width: 330px"><b>Game</b></div><div style="float: left; width: 200px"><b>Friend Code</b></div><br/>
+						<div id="codes">
+						<div id="45"><div style="float: left; width: 20px; height: 20px"><a href="#" class="del" value="45"><img src="images/delete.png" border="0"></a></div><div style="float: left; width: 330px; height: 20px">Advance Wars: Days of Ruin</div><div style="float: left; width: 200px; height: 20px" class="edit" value="1" type="45">1</div><div style="clear: both"></div></div>
+
+						<div id="1"><div style="float: left; width: 20px; height: 20px"><a href="#" class="del" value="1"><img src="images/delete.png" border="0"></a></div><div style="float: left; width: 330px; height: 20px">Animal Crossing: Wild World</div><div style="float: left; width: 200px; height: 20px" class="edit" value="11" type="1">11</div><div style="clear: both"></div></div>
+						<div id="44"><div style="float: left; width: 20px; height: 20px"><a href="#" class="del" value="44"><img src="images/delete.png" border="0"></a></div><div style="float: left; width: 330px; height: 20px">Battalion Wars 2</div><div style="float: left; width: 200px; height: 20px" class="edit" value="1" type="44">1</div><div style="clear: both"></div></div>
+						<div id="2"><div style="float: left; width: 20px; height: 20px"><a href="#" class="del" value="2"><img src="images/delete.png" border="0"></a></div><div style="float: left; width: 330px; height: 20px">Bleach: Dark Souls</div><div style="float: left; width: 200px; height: 20px" class="edit" value="1" type="2">1</div><div style="clear: both"></div></div>
+						<div id="3"><div style="float: left; width: 20px; height: 20px"><a href="#" class="del" value="3"><img src="images/delete.png" border="0"></a></div><div style="float: left; width: 330px; height: 20px">Bleach: The Blade of Fate</div><div style="float: left; width: 200px; height: 20px" class="edit" value="1" type="3">1</div><div style="clear: both"></div></div>
+												</div>
+
+						<form id="addcode_form">
+							<input type="hidden" value="add" id="mode" name="mode">
+							<div style="float: left; width: 350px">
+							<select name="addcode_type" id="addcode_type" class="input">
+								<option id="100" value="100" name="100">Animal Crossing: City Folk</option>
+								<option id="4" value="4" name="4">Bomberman Land Touch!</option>
+								<option id="5" value="5" name="5">Bomberman Story DS</option>
+
+								<option id="6" value="6" name="6">Castlevania: Portrait of Ruin</option>
+								<option id="7" value="7" name="7">Clubhouse Games</option>
+								<option id="8" value="8" name="8">Contact</option>
+								<option id="60" value="60" name="60">Cookie & Cream</option>
+								<option id="9" value="9" name="9">Custom Robo Arena</option>
+								<option id="10" value="10" name="10">Diddy Kong Racing DS</option>
+
+								<option id="11" value="11" name="11">Digimon World DS</option>
+								<option id="61" value="61" name="61">Digimon World: Dawn and Dusk</option>
+								<option id="99" value="99" name="99">Dr. Mario Online Rx</option>
+								<option id="47" value="47" name="47">Draglade</option>
+								<option id="85" value="85" name="85">Dragon Ball Z: Budokai Tenkaichi 3</option>
+								<option id="63" value="63" name="63">Dragon Quest Monsters: Joker</option>
+
+								<option id="86" value="86" name="86">Endless Ocean</option>
+								<option id="87" value="87" name="87">FIFA 08</option>
+								<option id="65" value="65" name="65">FIFA Street 3</option>
+								<option id="66" value="66" name="66">Final Fantasy Crystal Chronicles: Ring of Fates</option>
+								<option id="12" value="12" name="12">Final Fantasy Fables: Chocobo Tales</option>
+								<option id="13" value="13" name="13">Final Fantasy III</option>
+
+								<option id="102" value="102" name="102">Fire Emblem: Shadow Dragon</option>
+								<option id="67" value="67" name="67">Fullmetal Alchemist Trading Card Game</option>
+								<option id="55" value="55" name="55">Geometry Wars: Galaxies (DS)</option>
+								<option id="54" value="54" name="54">Geometry Wars: Galaxies (Wii)</option>
+								<option id="89" value="89" name="89">Ghost Squad</option>
+								<option id="43" value="43" name="43">Guitar Hero III: Legends of Rock</option>
+
+								<option id="101" value="101" name="101">Guitar Hero World Tour</option>
+								<option id="48" value="48" name="48">Heroes of Mana</option>
+								<option id="90" value="90" name="90">Hooked! Real Motion Fishing</option>
+								<option id="92" value="92" name="92">Itadaki Street DS</option>
+								<option id="14" value="14" name="14">Jump Ultimate Stars</option>
+								<option id="15" value="15" name="15">Konductra</option>
+
+								<option id="16" value="16" name="16">LostMagic</option>
+								<option id="49" value="49" name="49">Luminous Arc</option>
+								<option id="69" value="69" name="69">Madden NFL 08 (DS)</option>
+								<option id="72" value="72" name="72">Madden NFL 08 (Wii)</option>
+								<option id="74" value="74" name="74">Mario & Sonic at the Olympic Games</option>
+								<option id="17" value="17" name="17">Mario Kart DS</option>
+
+								<option id="64" value="64" name="64">Mario Kart Wii</option>
+								<option id="38" value="38" name="38">Mario Strikers: Charged</option>
+								<option id="18" value="18" name="18">Mario vs. Donkey Kong 2: March of the Minis</option>
+								<option id="76" value="76" name="76">Marvel Trading Card Game</option>
+								<option id="91" value="91" name="91">Medal of Honor: Heroes 2</option>
+								<option id="19" value="19" name="19">Mega Man Star Force</option>
+
+								<option id="20" value="20" name="20">Metroid Prime Hunters</option>
+								<option id="93" value="93" name="93">MX vs. ATV: Untamed</option>
+								<option id="21" value="21" name="21">Naruto RPG 3: Reijuu vs. Konoha Shoutai</option>
+								<option id="94" value="94" name="94">NBA Live 08</option>
+								<option id="95" value="95" name="95">Nights: Journey of Dreams</option>
+								<option id="77" value="77" name="77">Open Season</option>
+
+								<option id="51" value="51" name="51">Panzer Tactics DS</option>
+								<option id="22" value="22" name="22">Picross DS</option>
+								<option id="50" value="50" name="50">Planet Puzzle League</option>
+								<option id="78" value="78" name="78">Pogo Island</option>
+								<option id="37" value="37" name="37">Pokemon Battle Revolution</option>
+								<option id="23" value="23" name="23">Pokemon Diamond</option>
+
+								<option id="24" value="24" name="24">Pokemon Pearl</option>
+								<option id="103" value="103" name="103">Pokemon Platinum</option>
+								<option id="96" value="96" name="96">Pro Evolution Soccer 2008</option>
+								<option id="71" value="71" name="71">Professor Layton and the Curious Village</option>
+								<option id="25" value="25" name="25">Puyo Puyo 15th Anniversary</option>
+								<option id="79" value="79" name="79">Race Driver: Create and Race</option>
+
+								<option id="97" value="97" name="97">Rayman Raving Rabbids 2</option>
+								<option id="53" value="53" name="53">Rune Factory: A Fantasy Harvest Moon</option>
+								<option id="68" value="68" name="68">Sonic Riders: Zero Gravity</option>
+								<option id="40" value="40" name="40">Sonic Rush Adventure</option>
+								<option id="26" value="26" name="26">Spectrobes</option>
+								<option id="27" value="27" name="27">Star Fox Command</option>
+
+								<option id="39" value="39" name="39">Super Smash Bros. Brawl</option>
+								<option id="80" value="80" name="80">Surf's Up</option>
+								<option id="81" value="81" name="81">Tank Beat</option>
+								<option id="28" value="28" name="28">Tenchu: Dark Secret</option>
+								<option id="29" value="29" name="29">Tetris DS</option>
+								<option id="104" value="104" name="104">Tetris Party</option>
+
+								<option id="36" value="36" name="36">The Legend of Zelda: Phantom Hourglass</option>
+								<option id="30" value="30" name="30">Tony Hawk's American Sk8land</option>
+								<option id="31" value="31" name="31">Tony Hawk's Downhill Jam</option>
+								<option id="70" value="70" name="70">Tony Hawk's Proving Ground</option>
+								<option id="32" value="32" name="32">Touch Panic</option>
+								<option id="75" value="75" name="75">TouchMaster DS</option>
+
+								<option id="83" value="83" name="83">Transformers: Autobots and Decepticons</option>
+								<option id="98" value="98" name="98">Trauma Center: New Blood</option>
+								<option id="52" value="52" name="52">Ultimate Mortal Kombat</option>
+								<option id="33" value="33" name="33">World Soccer Winning Eleven Series</option>
+								<option id="46" value="46" name="46">Worms Open Warfare 2</option>
+								<option id="34" value="34" name="34">Yu-Gi-Oh! GX: Spirit Caller</option>
+
+								<option id="35" value="35" name="35">Yu-Gi-Oh! World Championship 2007</option>
+								<option id="73" value="73" name="73">Yu-Gi-Oh! World Championship 2008</option>
+								</select>
+							<div style="float: left; width: 200px"><input type="text" name="addcode_data" id="addcode_data" maxlength="15" size="17" class="input"><input type="image" src="images/add.png" name="submit" id="submit" /></div>
+							</div>
+							</div>
+							<br />
+						</form>
+
+<div style="clear: both;"></div>
+					</div>
+					<!-- USER FRIEND CODE BOX END -->
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</div>
+		[ <a href="admin.php" class="navbar_links">Admin Panel</a> ]
+		[ <a href="../forums">Forums</a> ]
+	</center>
+
+	</body>
+</html>

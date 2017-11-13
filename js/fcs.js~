@@ -1,0 +1,148 @@
+$(function() {
+	
+	var editing = 0;
+	var n_editing = 0;
+	
+	// Adding a friend code
+	$('#submit').click(function() {
+		$('#aresponse').slideUp(300, function() {
+			$(this).remove();
+		});
+		
+		//$('#container).append('<b id="loading">Loading!</b>');
+		
+		var type = $('#addcode_type').val();
+		var data = $('#addcode_data').val();
+		var ap   = $('#addcode_ap').val();
+		
+		$.ajax({
+			url: 'js/requests/changecode.php',
+			type: 'GET',
+			data: 'addcode_data=' + data + '&addcode_type=' + type + '&addcode_ap=' + ap + '&mode=add',
+			success: function(result) {
+				$('#response').hide();
+				$('#response').append(result);
+				$('#response').slideDown();
+				
+				/*
+				$('#codes').fadeOut(500);
+				$.ajax({
+					url: 'js/requests/getcodes.php',
+					type: 'GET',
+					success: function(result) {
+						$('#codes').html(result);
+						$('#codes').fadeIn(500);
+					}
+				});
+				*/
+			}
+		});
+		return false;
+	});
+	
+	// Removing a friend code
+	$('.del').click(function() {
+		$('#aresponse').slideUp(300, function() {
+			$(this).remove();
+		});
+		
+		//$('#container).append('<b id="loading">Loading!</b>');
+		
+		var type = $(this).attr('value');
+		
+		$.ajax({
+			url: 'js/requests/changecode.php',
+			type: 'GET',
+			data: 'type=' + type + '&mode=del',
+			success: function(result) {
+					$('#response').hide();
+					$('#response').append(result);
+					$('#response').slideDown();
+			}
+		});
+		return false;
+	});
+	
+	// Editing a friend code (setting up edit)
+	$('.edit').click(function() {
+		if (editing == 0) {
+			editing = 1;
+			var code = $(this).attr('value');
+			var type = $(this).attr('type');
+			var ap   = $(this).attr('ap');
+			var where = $(this);
+			
+			$(this).html("<input type=\"text\" name=\"ecode_data\" id=\"ecode_data\" maxlength=\"15\" size=\"17\" class=\"input\" value=\"" + code + "\" /><input type=\"image\" src=\"images/edit.png\" name=\"esubmit\" id=\"esubmit\" value=\"Edit!\" />");
+		}
+		
+		$('#esubmit').click(function() {
+			$('#aresponse').slideUp(300, function() {
+				$(this).remove();
+			});
+			$(this).remove();
+			var newcode = $('#ecode_data').val();
+			where.text(newcode);
+			
+			where.attr({
+				value: newcode
+			});
+			
+			$.ajax({
+				url: 'js/requests/changecode.php',
+				type: 'GET',
+				data: 'data=' + newcode + '&type=' + type + '&ap=' + ap + '&mode=edit',
+				success: function(result) {
+					$('#response').hide();
+					$('#response').append(result);
+					$('#response').slideDown();
+					editing = 0;
+				}
+			});
+		});
+	});
+	
+	// Edit notes
+	$('#editnotes').click(function() {
+		if (n_editing == 0) {
+			n_editing = 1;
+			
+			var where = $(this);
+			
+			var data = $(this).html();
+			$(this).html('<textarea class="textarea" rows="6" cols="62" id="notesedit">' + data + '</textarea><input type=\"image\" src=\"images/edit.png\" name=\"ensubmit\" id=\"ensubmit\" />');
+		}
+		
+		$('#ensubmit').click(function() {
+			$('#aresponse').slideUp(300, function() {
+				$(this).remove();
+			});
+			$(this).remove();
+			
+			var notes = $("#notesedit").val();
+			
+			where.html(notes);
+			
+			$.ajax({
+				url: 'js/requests/changecode.php',
+				type: 'GET',
+				data: 'notes=' + notes + '&mode=notes',
+				success: function(result) {
+					$('#response').hide();
+					$('#response').append(result);
+					$('#response').slideDown();
+					n_editing = 0;
+				}
+			});
+		});
+	});
+	
+	$('#response').click(function() {
+		$('#response').slideUp();
+	});
+});
+
+/*
+	$('#somediv').fadeOut(500, function() {
+		$(this).remove();
+	});
+*/
